@@ -32,8 +32,8 @@ app.post('/analyser', async (req, res) => {
           },
           {
             type: 'text',
-            text: `Analyse cette photo de visage. Réponds UNIQUEMENT avec un objet JSON, sans aucun texte autour, au format exact :
-{"formeVisage": "Ovale|Rond|Carré|Rectangulaire|Coeur|Triangulaire", "styleCheveux": "description courte", "monturesRecommandees": [{"nom": "...", "raison": "..."}], "monturesAEssayer": [{"nom": "...", "raison": "..."}], "monturesMoinsAdaptees": [{"nom": "...", "raison": "..."}]}`
+            text: `Analyse cette photo de visage. Repère le centre de chaque pupille et donne ses coordonnées comme des fractions entre 0 et 1 de la largeur (x) et de la hauteur (y) de l'image, avec l'origine en haut à gauche. Réponds UNIQUEMENT avec un objet JSON, sans aucun texte autour, au format exact :
+{"formeVisage": "Ovale|Rond|Carré|Rectangulaire|Coeur|Triangulaire", "styleCheveux": "styleCheveux": "description courte", "yeux": {"oeilGaucheImage": {"x": 0.xx, "y": 0.xx}, "oeilDroitImage": {"x": 0.xx, "y": 0.xx}},, "monturesRecommandees": [{"nom": "...", "raison": "..."}], "monturesAEssayer": [{"nom": "...", "raison": "..."}], "monturesMoinsAdaptees": [{"nom": "...", "raison": "..."}]}`
           }
         ]
       }]
